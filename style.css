@@ -66,9 +66,9 @@ padding:100px 20px;
 max-width:1200px;
 margin:auto;
 display:grid;
-grid-template-columns:repeat(4, 1fr);
-gap:25px;
-padding:60px 20px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+padding:40px 20px;
 }
 
 .product{
@@ -225,4 +225,29 @@ transition:opacity 0.3s;
 
 .notification.show{
 opacity:1;
+}
+
+@media (max-width: 768px){
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+
+.logo-main{
+font-size:22px;
+}
+
+.logo-sub{
+font-size:18px;
+}
+
+.product img{
+height:120px;
+}
+
 }
