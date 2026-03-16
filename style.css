@@ -25,23 +25,8 @@ margin-top:-5px;
 }
 
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
-transition:all 0.3s ease;
-}
-
-header.scrolled{
-padding:5px 0;
-}
-
-header.scrolled .logo-main{
-font-size:18px;
-}
-
-header.scrolled .logo-sub{
-font-size:14px;
+background:linear-gradient(90deg,#ffd6e7,#d6f0ff,#ead6ff);
+padding:20px;
 }
 
 .container{
@@ -289,4 +274,28 @@ font-size:18px;
 height:120px;
 }
 
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
+transition:all 0.3s ease;
+}
+
+header.scrolled{
+padding:5px 0;
+}
+
+header.scrolled .logo-main{
+font-size:18px;
+}
+
+header.scrolled .logo-sub{
+font-size:14px;
+}
+
+.mobile-logo{
+margin-bottom:30px;
 }
