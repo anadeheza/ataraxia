@@ -239,38 +239,58 @@ cursor:pointer;
 display:block;
 }
 
+header{
+padding:30px 20px;
+}
+
+.logo-main{
+font-size:36px;
+}
+
+.logo-sub{
+font-size:24px;
+}
+
 nav{
-display:none;
+display:flex;
 flex-direction:column;
 position:fixed;
 top:0;
-left:0;
-width:100%;
+right:-100%;
+width:85%;
 height:100vh;
-background:white;
+
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(90deg,#ffd6e7,#d6f0ff,#ead6ff);
+
 padding:40px 30px;
 gap:30px;
+
+transition:right 0.35s ease;
 z-index:2000;
 }
 
-nav.show{
-display: flex !important;;
+nav a{
+font-size:22px;
 }
 
+nav.show{
+right:0;
+}
 .products{
 grid-template-columns:repeat(2,1fr);
 }
 
-.logo-main{
-font-size:22px;
-}
-
-.logo-sub{
-font-size:18px;
-}
-
 .product img{
 height:120px;
+}
+
+.mobile-logo{
+display:block;
+text-align:center;
+margin-bottom:40px;
 }
 
 }
@@ -296,5 +316,5 @@ font-size:14px;
 }
 
 .mobile-logo{
-margin-bottom:30px;
+display:none;
 }
