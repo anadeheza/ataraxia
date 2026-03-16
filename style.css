@@ -242,16 +242,16 @@ display:block;
 nav{
 display:none;
 flex-direction:column;
-gap:10px;
+position:fixed;
+top:0;
+right:0;
+width:90%;
+height:100vh;
 background:white;
-position:absolute;
-top:80px;
-right:20px;
-width:200px;
-padding:20px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-z-index:1000;
+padding:40px;
+gap:25px;
+box-shadow:-10px 0 25px rgba(0,0,0,0.2);
+z-index:2000;
 }
 
 nav.show{
@@ -276,3 +276,22 @@ height:120px;
 
 }
 
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
+transition:all 0.3s ease;
+}
+
+header.scrolled{
+padding:5px 0;
+}
+
+header.scrolled .logo-main{
+font-size:18px;
+}
+
+header.scrolled .logo-sub{
+font-size:14px;
+}
