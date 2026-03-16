@@ -245,11 +245,13 @@ flex-direction:column;
 gap:10px;
 background:white;
 position:absolute;
-top:70px;
+top:80px;
 right:20px;
+width:200px;
 padding:20px;
 border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
+z-index:1000;
 }
 
 nav.show{
