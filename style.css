@@ -29,26 +29,22 @@ header{
   top: 0;
   z-index: 1000;
   background: linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
+
   padding: 20px;
+
   transition: all 0.3s ease;
-  will-change: transform;
 }
 
-/*header.scrolled{
+header.scrolled{
 padding:5px 0;
-}*/
+}
 
 header.scrolled .logo-main{
-  transform: scale(0.8);
+font-size:18px;
 }
 
 header.scrolled .logo-sub{
-  transform: scale(0.8);
-}
-
-.logo-main,
-.logo-sub{
-  transition: transform 0.3s ease;
+font-size:14px;
 }
 
 .mobile-logo{
