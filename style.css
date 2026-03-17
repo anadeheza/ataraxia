@@ -30,9 +30,12 @@ padding:20px;
 }
 
 .container{
+max-width:1100px;
+margin:auto;
 display:flex;
+justify-content:space-between;
 align-items:center;
-gap:20px;
+gap:40px;
 }
 
 nav{
@@ -236,22 +239,8 @@ cursor:pointer;
 
 @media (max-width:768px){
 
-.menu-toggle {
-  order: 1;
-  margin-left: 5px;
-  display: block;
-}
-
-.logo {
-  order: 2;
-  margin: 0 auto;
-  text-align: center;
-  position: static;
-}
-
-.cart-container {
-  order: 3;
-  margin-right: 5px;
+.menu-toggle{
+display:block;
 }
 
 header{
@@ -306,16 +295,6 @@ height:120px;
 display:block;
 text-align:center;
 margin-bottom:40px;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  justify-self: center;
 }
 
 }
