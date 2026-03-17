@@ -77,14 +77,17 @@ display:none;
   margin:auto;
   display:flex;
   align-items:center;
-  justify-content:space-between; /* 🔥 clave */
+  justify-content:space-between; 
 }
 
 nav{
-margin-left:auto;
-display:flex;
-align-items:center;
-gap:25px;
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+.cart-container{
+  margin-left:20px;
 }
 
 nav a{
@@ -301,10 +304,28 @@ font-size:24px;
 .container{
   display:flex;
   align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  margin:0 auto;
+  text-align:center;
+}
+
+.menu-toggle{
+  order:1;
+}
+
+.logo{
+  order:2;
 }
 
 .cart-container{
-  margin-left:auto; /* lo empuja totalmente a la derecha */
+  order:3;
+}
+
+.cart-container{
+  margin-left:auto;
 }
 
 nav{
