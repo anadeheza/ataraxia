@@ -42,6 +42,7 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  transition: transform 0.3s ease;
 }
 
 /* NAV */
@@ -360,5 +361,9 @@ textarea{
 
   header.scrolled .logo-sub{
     font-size:18px;
+  }
+  
+  header.scrolled .container{
+    transform: scale(0.97);
   }
 }
