@@ -14,19 +14,39 @@ line-height:1;
 .logo-main{
 font-family:'Josefin Sans', sans-serif;
 letter-spacing:6px;
-font-size:40px;
+font-size:30px;
 font-weight:300;
 }
 
 .logo-sub{
 font-family:'Dancing Script', cursive;
-font-size:30px;
+font-size:20px;
 margin-top:-5px;
 }
 
 header{
-background:linear-gradient(90deg,#ffd6e7,#d6f0ff,#ead6ff);
-padding:40px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+header.scrolled{
+padding:5px 0;
+}
+
+header.scrolled .logo-main{
+font-size:18px;
+}
+
+header.scrolled .logo-sub{
+font-size:14px;
+}
+
+.mobile-logo{
+display:none;
 }
 
 .container{
@@ -35,14 +55,6 @@ margin:auto;
 display:flex;
 align-items:center;
 gap:20px;
-}
-
-nav{
-margin-left:auto;
-}
-
-.cart-container{
-margin-left:20px;
 }
 
 nav{
@@ -306,26 +318,16 @@ margin-bottom:40px;
 
 }
 
-header{
-position:sticky;
-top:0;
-z-index:1000;
-background:linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
-transition:all 0.3s ease;
-}
+@media (min-width: 769px){
+  header{
+    padding:50px 20px;
+  }
 
-header.scrolled{
-padding:5px 0;
-}
+  .logo-main{
+    font-size:40px;
+  }
 
-header.scrolled .logo-main{
-font-size:18px;
-}
-
-header.scrolled .logo-sub{
-font-size:14px;
-}
-
-.mobile-logo{
-display:none;
+  .logo-sub{
+    font-size:26px;
+  }
 }
