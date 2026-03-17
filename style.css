@@ -30,9 +30,9 @@ header{
   z-index: 1000;
   background: linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
 
-  padding: 20px;
+  padding: 40px 20px; /* tamaño grande inicial */
 
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-main,
@@ -58,8 +58,8 @@ header{
   }
   
   header.scrolled{
-    transform: scaleY(0.85);
-    transform-origin: top;
+    padding: 20px 20px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
   }
 
   header.scrolled .logo-main{
