@@ -31,18 +31,24 @@ header{
   background: linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
   padding: 20px;
   transition: all 0.3s ease;
+  will-change: transform;
 }
 
-header.scrolled{
+/*header.scrolled{
 padding:5px 0;
-}
+}*/
 
 header.scrolled .logo-main{
-font-size:18px;
+  transform: scale(0.8);
 }
 
 header.scrolled .logo-sub{
-font-size:14px;
+  transform: scale(0.8);
+}
+
+.logo-main,
+.logo-sub{
+  transition: transform 0.3s ease;
 }
 
 .mobile-logo{
