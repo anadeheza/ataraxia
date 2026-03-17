@@ -17,47 +17,40 @@
 
 <header>
 
-<div class="container">
+  <div class="container">
 
-<div class="logo">
-<span class="logo-main">ATARAXIA</span>
-<span class="logo-sub">Ilustraciones</span>
-</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      ☰
+    </div>
 
-<div class="menu-toggle" onclick="toggleMenu()">
-☰
-</div>
+    <div class="logo">
+      <span class="logo-main">ATARAXIA</span>
+      <span class="logo-sub">Ilustraciones</span>
+    </div>
 
-<nav id="nav-menu">
+    <div class="cart-container">
+      <a href="carrito.html" class="cart">
+        🛒 <span id="cart-count">0</span>
+      </a>
+      <div class="mini-cart" id="mini-cart"></div>
+    </div>
 
-<div class="mobile-logo">
+    <nav id="nav-menu">
+      <div class="mobile-logo">
+        <span class="logo-main">ATARAXIA</span>
+        <span class="logo-sub">Ilustraciones</span>
+      </div>
 
-<span class="logo-main">ATARAXIA</span>
-<span class="logo-sub">Ilustraciones</span>
+      <a href="index.html">Inicio</a>
+      <a href="cuadernos.html">Cuadernos</a>
+      <a href="cuadros.html">Cuadros</a>
+      <a href="stickers.html">Stickers</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
 
-</div>
-
-<a href="index.html">Inicio</a>
-<a href="cuadernos.html">Cuadernos</a>
-<a href="cuadros.html">Cuadros</a>
-<a href="stickers.html">Stickers</a>
-<a href="contacto.html">Contacto</a>
-</div>
-<div class="cart-container">
-
-<!--<a href="carrito.html" class="cart">
-🛒 <span id="cart-count">0</span>
-</a>-->
-
-<div class="mini-cart" id="mini-cart"></div>
-
-</div>
-
-</nav>
-
+  </div>
 
 </header>
-
 
 <section class="products">
 
@@ -74,5 +67,7 @@
 <div id="notification" class="notification"></div>
 
 </body>
+
+<body class="cart-page"></body>
 
 </html>
