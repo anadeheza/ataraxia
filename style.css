@@ -35,31 +35,53 @@ header{
   transition: all 0.3s ease;
 }
 
-header.scrolled{
-padding:5px 0;
+.logo-main,
+.logo-sub{
+  transition: transform 0.3s ease;
 }
 
-header.scrolled .logo-main{
-font-size:18px;
+@media (min-width: 769px){
+  header{
+    padding:50px 20px;
+  }
+
+  .logo-main{
+    font-size:40px;
+  }
+
+  .logo-sub{
+    font-size:26px;
+  }
+
+  .hero{
+    padding:140px 20px;
+  }
+
+  header.scrolled .logo-main{
+    transform: scale(1.1);
+  }
+
+  header.scrolled .logo-sub{
+    transform: scale(1.1);
+  }
+
 }
 
-header.scrolled .logo-sub{
-font-size:14px;
-}
 
 .mobile-logo{
 display:none;
 }
 
 .container{
-max-width:1100px;
-margin:auto;
-display:flex;
-align-items:center;
-gap:20px;
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between; /* 🔥 clave */
 }
 
 nav{
+margin-left:auto;
 display:flex;
 align-items:center;
 gap:25px;
@@ -276,6 +298,15 @@ font-size:36px;
 font-size:24px;
 }
 
+.container{
+  display:flex;
+  align-items:center;
+}
+
+.cart-container{
+  margin-left:auto; /* lo empuja totalmente a la derecha */
+}
+
 nav{
 display:flex;
 flex-direction:column;
@@ -318,18 +349,4 @@ text-align:center;
 margin-bottom:40px;
 }
 
-}
-
-@media (min-width: 769px){
-  header{
-    padding:50px 20px;
-  }
-
-  .logo-main{
-    font-size:40px;
-  }
-
-  .logo-sub{
-    font-size:26px;
-  }
 }
