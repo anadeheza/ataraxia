@@ -56,6 +56,11 @@ header{
   .hero{
     padding:140px 20px;
   }
+  
+  header.scrolled{
+    transform: scaleY(0.85);
+    transform-origin: top;
+  }
 
   header.scrolled .logo-main{
     transform: scale(0.8);
