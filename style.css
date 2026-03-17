@@ -31,8 +31,10 @@ header{
   top: 0;
   z-index: 1000;
   background: linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
+
   padding: 40px 20px;
-  transition: box-shadow 0.3s ease;
+
+  transition: box-shadow 0.3s ease;  
 }
 
 /* CONTENEDOR */
@@ -42,7 +44,8 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  transition: transform 0.3s ease;
+
+  transition: transform 0.3s ease;  
 }
 
 /* NAV */
@@ -331,7 +334,6 @@ textarea{
 /* ===================== */
 /* 💻 DESKTOP */
 /* ===================== */
-
 @media (min-width:769px){
 
   header{
@@ -352,7 +354,7 @@ textarea{
 
   header.scrolled{
     padding:20px 20px;
-    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
   }
 
   header.scrolled .logo-main{
@@ -362,8 +364,9 @@ textarea{
   header.scrolled .logo-sub{
     font-size:18px;
   }
-  
+
   header.scrolled .container{
     transform: scale(0.97);
   }
+
 }
