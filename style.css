@@ -32,7 +32,7 @@ header{
   z-index: 1000;
   background: linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
   padding: 40px 20px;
-  transition: padding 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 /* CONTENEDOR */
