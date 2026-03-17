@@ -58,11 +58,11 @@ header{
   }
 
   header.scrolled .logo-main{
-    transform: scale(1.1);
+    transform: scale(0.8);
   }
 
   header.scrolled .logo-sub{
-    transform: scale(1.1);
+    transform: scale(0.8);
   }
 
 }
