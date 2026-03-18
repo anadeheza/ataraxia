@@ -3,6 +3,7 @@ body{
   font-family:'Poppins', sans-serif;
   background:#faf7ff;
   color:#333;
+  padding-top: 120px;
 }
 
 /* LOGO */
@@ -25,16 +26,20 @@ body{
   margin-top:-5px;
 }
 
+.logo-main, .logo-sub {
+  transition: font-size 0.4s ease, letter-spacing 0.4s ease;
+}
+
 /* HEADER */
 header{
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
   background: linear-gradient(90deg,#ffd6f0,#d6f0ff,#e6d6ff);
-
-  padding: 40px 20px;
-
-  transition: box-shadow 0.3s ease;  
+  padding: 30px 0px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform; 
 }
 
 /* CONTENEDOR */
@@ -68,9 +73,9 @@ nav a{
 }
 
 .cart{
-  background:white;
   padding:8px 14px;
   border-radius:20px;
+  text-decoration: none;
 }
 
 .mini-cart{
@@ -262,6 +267,10 @@ textarea{
   }
 
   .logo{
+    position: absolute;
+    left: 45%;
+    transform: translateX(-50%);
+    z-index: 1;
     margin:0 auto;
     text-align:center;
     order:2;
@@ -270,14 +279,15 @@ textarea{
   .cart-container{
     order:3;
     margin-left:auto;
+    margin-right: 15px;
   }
 
   .logo-main{
-    font-size:36px;
+    font-size:30px;
   }
 
   .logo-sub{
-    font-size:24px;
+    font-size:20px;
   }
 
   header.scrolled{
@@ -353,16 +363,16 @@ textarea{
   }
 
   header.scrolled{
-    padding:20px 20px;
+    padding:10px 20px;
     box-shadow:0 8px 25px rgba(0,0,0,0.12);
   }
 
   header.scrolled .logo-main{
-    font-size:32px;
+    font-size:28px;
   }
 
   header.scrolled .logo-sub{
-    font-size:18px;
+    font-size:16px;
   }
 
   header.scrolled .container{
