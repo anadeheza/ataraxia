@@ -180,12 +180,12 @@ menu.classList.toggle("show")
 
 }
 
-window.addEventListener("scroll", function() {
-  const header = document.querySelector("header");
-
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('header');
+  header.classList.toggle('scrolled', window.scrollY > 80);
   if (window.scrollY > 50) {
-    header.classList.add("scrolled");
+    header.classList.add('scrolled');
   } else {
-    header.classList.remove("scrolled");
+    header.classList.remove('scrolled');
   }
 });
