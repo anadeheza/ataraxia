@@ -3,8 +3,20 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // --- FUNCIONES DE CARRITO ---
 
-function addToCart(name, price) {
-    cart.push({ name: name, price: price });
+function addToCart(name, price, image) {
+    let itemExistente = cart.find(item => item.name === name);
+
+    if (itemExistente) {
+        itemExistente.quantity += 1;
+    } else {
+        cart.push({ 
+            name: name, 
+            price: price, 
+            image: image, 
+            quantity: 1 
+        });
+    }
+    
     saveCart();
     updateUI();
     showNotification(name + " agregado al carrito");
@@ -25,7 +37,8 @@ function updateUI() {
 function updateCartCount() {
     let cartCount = document.getElementById("cart-count");
     if (cartCount) {
-        cartCount.innerText = cart.length;
+        let totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCount.innerText = totalQuantity;
     }
 }
 
@@ -45,40 +58,50 @@ function updateMiniCart() {
 }
 
 function loadCartPage() {
+    
     let container = document.getElementById("cart-items");
     let totalContainer = document.getElementById("cart-total");
     if (!container) return;
 
-    container.innerHTML = "";
-    
+    container.innerHTML = `<h2 class="cart-title">Tu carrito</h2>`;
+
     if (cart.length === 0) {
-        container.innerHTML = "<p>Tu carrito está vacío.</p>";
-        if (totalContainer) totalContainer.innerHTML = "";
+        container.innerHTML = "<p class='empty-cart-msg'>Tu carrito está vacío.</p>";
+        if (totalContainer) totalContainer.innerHTML = ""; 
         return;
     }
 
     let total = 0;
     cart.forEach((item, index) => {
-        total += item.price;
+        let subtotal = item.price * item.quantity;
+        total += subtotal;
+
         container.innerHTML += `
             <div class="cart-item">
-                <div>
+                <img src="${item.image}" alt="${item.name}" class="cart-img">
+                <div class="cart-info">
                     <h3>${item.name}</h3>
                     <p>$${item.price}</p>
                 </div>
-                <button onclick="removeFromCart(${index})">Eliminar</button>
+                <div class="cart-quantity">
+                    <button onclick="changeQuantity(${index}, -1)">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="changeQuantity(${index}, 1)">+</button>
+                </div>
+                <p class="subtotal">$${subtotal}</p>
+                <button class="delete-btn" onclick="removeFromCart(${index})">✕</button>
             </div>
         `;
     });
 
     if (totalContainer) {
-        totalContainer.innerHTML = `
-            <div class="cart-summary">
-                <h3 style="font-size: 18px; margin-bottom: 10px;">Total: $${total}</h3>
-                <button id="clear-cart-btn" onclick="clearCart()">Vaciar Carrito</button>
-            </div>
-        `;
-    }
+    totalContainer.innerHTML = `
+        <div class="cart-summary">
+            <h3>Total: $${total}</h3>
+            <button id="clear-cart-btn" onclick="clearCart()">Vaciar Carrito</button>
+        </div>
+    `;
+}
 }
 
 window.addEventListener('scroll', function() {
@@ -116,7 +139,7 @@ function showNotification(message) {
 
 function toggleMenu() {
     const nav = document.getElementById('nav-menu');
-    const menuIcon = document.getElementById('menu-icon'); // Necesitas este ID en tu HTML
+    const menuIcon = document.getElementById('menu-icon');
     
     nav.classList.toggle('show');
 }
@@ -128,3 +151,14 @@ document.addEventListener('DOMContentLoaded', () => {
         loadCartPage();
     }
 });
+
+function changeQuantity(index, delta) {
+    cart[index].quantity += delta;
+
+    if (cart[index].quantity < 1) {
+        removeFromCart(index);
+    } else {
+        saveCart();
+        updateUI();
+    }
+}

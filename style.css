@@ -230,15 +230,98 @@ textarea{
 
 /* CARRITO PAGE */
 .cart-box{
-  max-width:600px;
-  margin:auto;
-  padding:40px;
+  max-width:800px;
+  margin: 120px auto 50px;
+  padding:0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
 }
 
-.cart-item{
-  display:flex;
-  justify-content:space-between;
-  margin:8px 0;
+.cart-title {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 1fr 30px;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.cart-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f8f8;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.cart-quantity button {
+    background: none;
+    padding: 0 5px;
+    font-size: 18px;
+    color: #a084dc;
+}
+
+.cart-quantity span {
+    font-weight: 500;
+    min-width: 20px;
+    text-align: center;
+}
+
+.subtotal {
+    font-weight: 600;
+    color: #333;
+    min-width: 80px;
+    text-align: right;
+}
+
+#cart-items {
+    width: 100%;
+}
+
+.cart-page .cart-container{
+  display:none;
+}
+
+.delete-btn {
+    background: #f0e6ff;
+    color: #a084dc;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #ffdee9;
+    color: #ff4d4d;
 }
 
 /* ANIMACIONES */
@@ -280,10 +363,6 @@ textarea{
   display:none;
 }
 
-.cart-page .cart-container{
-  display:none;
-}
-
 /* ===================== */
 /* 📱 MOBILE */
 /* ===================== */
@@ -316,13 +395,6 @@ textarea{
   .logo-main { font-size: 30px; }
   .logo-sub { font-size: 20px; }
 
-  .cart-container {
-    order: 3;
-    margin-left: auto;
-    margin-right: 15px;
-    z-index: 2;
-  }
-
   header.scrolled {
     padding: 15px 20px;
   }
@@ -334,6 +406,13 @@ textarea{
   header.scrolled .logo-sub {
     font-size: 16px;
     margin-top: -2px;
+  }
+
+  .cart-container {
+    order: 3;
+    margin-left: auto;
+    margin-right: 15px;
+    z-index: 2;
   }
 
   .cart-page header, 
@@ -361,6 +440,8 @@ textarea{
     margin-bottom: 10px;
     background: #fff;
     border-radius: 8px;
+    grid-template-columns: 70px 1fr 1fr 40px;
+    gap: 10px;
   }
 
   .cart-item h3 { font-size: 14px; margin: 0; }
@@ -372,16 +453,32 @@ textarea{
     width: auto; 
   }
 
+  .cart-summary {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   #clear-cart-btn {
     width: fit-content !important;
-    margin: 20px auto !important;
-    padding: 8px 15px;
+    margin: 15px auto !important;
+    padding: 10px 20px;
+    display: block;
   }
 
   .cart-page .cart-box {
     margin-top: 100px;
   }
 
+  .cart-img{
+    width: 60px;
+    height: 60px;
+  }
+  
   nav {
     flex-direction: column;
     position: fixed;
@@ -486,11 +583,5 @@ textarea{
         background-color: #e2d1ff;
         box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
 }
 
